@@ -1,0 +1,31 @@
+{
+	"name": "worker",
+	"main": "worker.ts",
+	"compatibility_date": "2025-10-01",
+	"compatibility_flags": ["nodejs_compat"],
+	"observability": {
+		"enabled": true
+	},
+	"dev": {
+		"port": 9988
+	},
+	"tail_consumers": [
+		{
+			"service": "tail"
+		}
+	],
+	"durable_objects": {
+		"bindings": [
+			{
+				"name": "TEST_DO",
+				"class_name": "TestDO"
+			}
+		]
+	},
+	"migrations": [
+		{
+			"tag": "v1",
+			"new_classes": ["TestDO"]
+		}
+	]
+}
