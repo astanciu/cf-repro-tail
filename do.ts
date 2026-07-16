@@ -9,7 +9,7 @@ export class TestDO extends DurableObject {
   async ping(value) {
     this.callCount++;
 
-    console.log(`[DO] Ping Received: ${value}`)
+    console.log(`[DO] Ping Received: ${value}`);
     const client = new Client({ connectionString: DB_URL });
     await client.connect();
 
@@ -17,6 +17,6 @@ export class TestDO extends DurableObject {
   }
 
   async pong(value) {
-    console.log(`[DO] Pong Received: ${value}`)
+    console.log(`[DO] Pong Received: ${value}`);
   }
 }

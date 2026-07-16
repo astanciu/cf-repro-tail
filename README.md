@@ -2,6 +2,8 @@
 
 This repo shows a possible bug with cloudflare workers, durable objects and tail worker.
 
+Tracked in [cloudflare/workerd#5291](https://github.com/cloudflare/workerd/issues/5291). Still reproducible with Wrangler 4.111.0 and pg 8.22.0 as of July 16, 2026.
+
 # Problem
 
 When a Durable Object makes a connection to pg, it stops sending logs to the worker's configured Tail Worker.
